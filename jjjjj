@@ -1,0 +1,202 @@
+Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+sat_score = 0 ' to calculate sat score
+b = 0 ' to calculate High school quality score
+c = 0 'to calculate difficult of curiculm
+d = 0 ' to calculate total count of 40
+essay_score = 0
+misc_score = 0
+geogrpahy_score = 0
+alumni_score = 0
+leader_score = 0
+sum = 0 'to calculate overall sum
+End Sub
+
+Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+TextBox2.Multiline = True ' to add multilines in textbox
+
+d = alumni_score + essay_score + misc_score + geogrpahy_score + leader_score
+' d can have maximum value of 40
+If (d > 40) Then
+d = 40
+End If
+
+' sum is used t calculate overall sum
+sum = sat_score + b + c + gpa_score + d
+
+'Environment.newline is used to set new line
+
+TextBox2.Text = "Total Score: " + sum.ToString() + Environment.NewLine + Environment.NewLine
+
+If sum >= 100 Then
+TextBox2.Text += "Admitted"
+Else
+TextBox2.Text += "Not Admitted"
+
+End If
+
+End Sub
+
+Private Sub RadioButton6_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+End Sub
+
+Private Sub RadioButton6_CheckedChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton6.CheckedChanged
+b = 0
+End Sub
+
+Private Sub RadioButton1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged
+sat_score = 0
+End Sub
+
+Private Sub RadioButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton2.CheckedChanged
+sat_score = 6
+End Sub
+
+Private Sub RadioButton3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton3.CheckedChanged
+sat_score = 10
+End Sub
+
+Private Sub RadioButton4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton4.CheckedChanged
+sat_score = 11
+End Sub
+
+Private Sub RadioButton5_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton5.CheckedChanged
+sat_score = 12
+End Sub
+
+Private Sub RadioButton7_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton7.CheckedChanged
+b = 2
+End Sub
+
+Private Sub RadioButton8_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton8.CheckedChanged
+b = 4
+End Sub
+
+Private Sub RadioButton9_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton9.CheckedChanged
+b = 6
+End Sub
+
+Private Sub RadioButton10_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton10.CheckedChanged
+b = 8
+End Sub
+
+Private Sub RadioButton11_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton11.CheckedChanged
+b = 10
+End Sub
+
+Private Sub TextBox1_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox1.Leave
+' to take input gpa score from user and multiply with 20 when textbox1 leaves focus
+gpa_score = Convert.ToDouble(TextBox1.Text())
+gpa_score = gpa_score * 20
+TextBox3.Text = "[" + gpa_score.ToString() + "]"
+
+End Sub
+
+Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
+
+End Sub
+
+Private Sub TextBox3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox3.TextChanged
+
+End Sub
+
+Private Sub GroupBox3_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox3.Enter
+
+End Sub
+
+Private Sub RadioButton12_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton12.CheckedChanged
+c = -4
+End Sub
+
+Private Sub RadioButton13_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton13.CheckedChanged
+c = -2
+End Sub
+
+Private Sub RadioButton14_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton14.CheckedChanged
+c = 0
+End Sub
+
+Private Sub RadioButton16_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton16.CheckedChanged
+c = 2
+End Sub
+
+Private Sub RadioButton15_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton15.CheckedChanged
+c = 4
+End Sub
+
+Private Sub RadioButton17_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton17.CheckedChanged
+c = 6
+End Sub
+
+Private Sub RadioButton18_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton18.CheckedChanged
+c = 8
+End Sub
+
+Private Sub GroupBox4_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox4.Enter
+
+End Sub
+
+Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+
+End Sub
+
+Private Sub GroupBox5_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox5.Enter
+
+End Sub
+
+Private Sub GroupBox8_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox8.Enter
+
+End Sub
+
+Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
+geogrpahy_score = 10
+End Sub
+
+Private Sub RadioButton23_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton23.CheckedChanged
+essay_score += 1
+End Sub
+
+Private Sub RadioButton24_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton24.CheckedChanged
+essay_score += 2
+End Sub
+
+Private Sub RadioButton25_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton25.CheckedChanged
+essay_score += 3
+End Sub
+
+Private Sub RadioButton19_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton19.CheckedChanged
+misc_score = 20
+End Sub
+
+Private Sub RadioButton20_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton20.CheckedChanged
+misc_score = 5
+End Sub
+
+Private Sub RadioButton21_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton21.CheckedChanged
+misc_score = 20
+End Sub
+
+Private Sub RadioButton22_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton22.CheckedChanged
+misc_score = 20
+End Sub
+
+Private Sub CheckBox4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox4.CheckedChanged
+alumni_score += 4
+End Sub
+
+Private Sub CheckBox5_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox5.CheckedChanged
+alumni_score += 1
+End Sub
+
+Private Sub CheckBox9_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox9.CheckedChanged
+leader_score = 1
+End Sub
+
+Private Sub CheckBox10_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox10.CheckedChanged
+leader_score = 2
+End Sub
+
+Private Sub CheckBox11_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox11.CheckedChanged
+leader_score = 5
+End Sub
+End Class
